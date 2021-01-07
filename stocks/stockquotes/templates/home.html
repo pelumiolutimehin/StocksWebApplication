@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<h1>Home Page</h1><br><br>
+
+{% if api %}
+    {% if api == "Error.." %}
+        There was a problem with your ticker symbol
+        Please try again
+    
+    {% else %}
+        {%for key, value in api.items %}
+            {{ key }} : {{value}}<br>
+        {% endfor%}
+
+    {% endif %}
+{% endif %}<!--A-->
+
+{%endblock%}
